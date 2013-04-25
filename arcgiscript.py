@@ -23,7 +23,6 @@ import os
 import fnmatch
 import shapely
 from osgeo import ogr
-import ogr
 from shapely.geometry import *
 
 
