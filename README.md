@@ -26,4 +26,4 @@ The following steps are to post-process the attribute data to calculate settleme
 1. Summarize the above join output by name of the admin unit
 2. Join the summary table to the new join output layer
 3. Calculate the area ratio for each cluster point (Area of cluster/Sum of Cluster Area)
-4. Calculate the population/households using the above ratio
+4. Calculate the population/households for each cluster point using the above ratio and admin unit population
