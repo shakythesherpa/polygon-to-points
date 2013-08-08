@@ -13,6 +13,7 @@ The following are the steps involved:
 
 
 The following are the steps to merge and spatially join the points to respective admin boundaries
+
 1. Import the point shapefiles (need to iterate through the folder structure)
 2. Read the points as a list of input files as part of a list
 3. Merge all the points and save as a new set of point 
@@ -21,6 +22,7 @@ The following are the steps to merge and spatially join the points to respective
 
 
 The following steps are to post-process the attribute data to calculate settlement population
+
 1. Summarize the above join output by name of the admin unit
 2. Join the summary table to the new join output layer
 3. Calculate the area ratio for each cluster point (Area of cluster/Sum of Cluster Area)
