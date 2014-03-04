@@ -16,7 +16,7 @@ import time
 start_time = time.time()
 
 #import all the necessary modules
-#import arcpy
+import arcpy
 import sys
 import traceback
 import os
@@ -50,12 +50,12 @@ for foldername,workspace, shapefile in folder_file_iter("C:\\Users\\SSherpa\\Dro
     output_layer = "settlement_areas.shp"
     point_layer = foldername.replace("-","_")+"_settlement_points.shp"
 
-          # print the number of records in the feature class
-    """
+     # print the number of records in the feature class
+    
     result = arcpy.GetCount_management(feat_class)
     print "Checking for feature class..."
     print "Number of features in the feature class " + feat_class + " : " + str(result)
-    """
+    
     os.chdir(workspace)
     # get the driver
     driver = ogr.GetDriverByName('ESRI Shapefile')
@@ -64,6 +64,7 @@ for foldername,workspace, shapefile in folder_file_iter("C:\\Users\\SSherpa\\Dro
     if datasource is None:
         print 'Could not open file'
         sys.exit(1)
+    
     # get the data layer
     layer = datasource.GetLayer()
     # loop through the features and count them
@@ -77,7 +78,7 @@ for foldername,workspace, shapefile in folder_file_iter("C:\\Users\\SSherpa\\Dro
     # close the data source
     datasource.Destroy()
 
-"""
+
 # check to see if the feature layer exists; if so, delete it
 
 if arcpy.Exists(feat_layer):
@@ -105,8 +106,8 @@ print "Calculating Areas..."
 arcpy.FeatureToPoint_management(output_layer, point_layer, "INSIDE")
 print "Converting polygon features" + feat_layer + " to point features layer " + point_layer
 
-"""
-"""
+
+
 except:
     tb = sys.exc_info()[2]
     tbinfo = traceback.format_tb(tb)[0]
